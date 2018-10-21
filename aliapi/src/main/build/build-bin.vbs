@@ -1,8 +1,7 @@
-Set args = WScript.Arguments
-MsgBox args
-Set project = args(0)
 Set fso = Wscript.CreateObject("Scripting.FileSystemObject")
-set f=fso.opentextfile(createobject("Scripting.FileSystemObject").GetFolder(".").Path & "../bin/start.sh")
+Set args = wscript.arguments
+msgbox args.count
+set f=fso.opentextfile("D:\workspaces\zlys\aliapi\src\main\build/" & "../bin/start.sh")
 s=replace(f.readall,"${project.finalName}", project)'
 f.close
 set r=fso.opentextfile("../bin/start.sh",2,true)

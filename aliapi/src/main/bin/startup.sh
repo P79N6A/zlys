@@ -1,5 +1,5 @@
 #!/bin/bash
-# comment 'distribution-admin'
+# comment 'startup'
 . /etc/profile
 set -e
 WORK_PATH=$(cd $(dirname $0); pwd)

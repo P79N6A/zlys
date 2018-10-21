@@ -7,7 +7,7 @@ if [ -f ${WORK_PATH}/running.pid ]; then
  rm ${WORK_PATH}/running.pid
 fi
 
-_pids=$(ps -ef | grep "distribution-admin" | grep -v grep | awk '{print $2}')
+_pids=$(ps -ef | grep "XXX" | grep -v grep | awk '{print $2}')
 num=${#_pids[@]}
 if [ ${num} -gt 0 ];then
 
