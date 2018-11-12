@@ -1,5 +1,6 @@
 package com.zlys.aliapi.util;
 
+import com.zlys.aliapi.util.exception.CustomException;
 import net.sf.json.JSONArray;
 
 import javax.validation.ConstraintViolation;
@@ -32,7 +33,7 @@ public class ParamsValidator {
         return paramsValidator;
     }
 
-    public <T> void getValidator(T var1, Class...groups, ){
+    public <T> void getValidator(T var1, Class...groups){
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
         Set<ConstraintViolation<T>> constraintViolations = validator.validate(var1,groups);

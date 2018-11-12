@@ -2,6 +2,7 @@ package com.zlys.aliapi.dto;
 
 import com.zlys.aliapi.util.DateTimeUtils;
 
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.util.Date;
@@ -19,6 +20,7 @@ public class AliPayRequest {
     /**
      * String	是	32	支付宝分配给开发者的应用ID	2014072300007148
      */
+    @NotNull(message = "开发者应用ID:app_id.不能为空")
     private String app_id;
     /**
      * 	String	是	128	接口名称	alipay.trade.page.pay
@@ -78,12 +80,13 @@ public class AliPayRequest {
     /**
      *	String	必选	64	商户订单号,64个字符以内、可包含字母、数字、下划线；需保证在商户端不重复	20150320010101001
      */
+    @NotNull(message = "商户订单号:out_trade_no.不能为空")
     private String out_trade_no;
     /**
      *	String	必选	64	销售产品码，与支付宝签约的产品码名称。
      *  注：目前仅支持FAST_INSTANT_TRADE_PAY	FAST_INSTANT_TRADE_PAY
      */
-    private String product_code;
+    private String product_code = "FAST_INSTANT_TRADE_PAY";
     /**
      *	Price	必选	11	订单总金额，单位为元，精确到小数点后两位，取值范围[0.01,100000000]。	88.88
      */
